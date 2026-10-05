@@ -9,22 +9,40 @@
 
 START get_item
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+START get_item
 
-    # TODO 2: Prompt for and receive the player's get-item command.
+    # TODO 1: Identify the information the get‑item process needs.
+    # The program must know the current room, the item in that room, and the player's inventory.
+    SET current_room TO player's current location
+    SET room_item TO item located in current_room
+    SET inventory TO list of items collected by player
 
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+    # TODO 2: Prompt for and receive the player's get‑item command.
+    OUTPUT "Enter the item you want to collect:"
+    INPUT player_item
+    CONVERT player_item TO lowercase
 
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+    # TODO 3: Validate whether the requested item is available in the current room.
+    IF room_item IS NOT EMPTY THEN
+        IF player_item EQUALS room_item THEN
+            # TODO 4: Describe what happens when the item request is valid.
+            ADD room_item TO inventory
+            REMOVE room_item FROM current_room
+            OUTPUT "You collected the " + player_item + "."
+        ELSE
+            # TODO 5: Describe what happens when the item request is invalid.
+            OUTPUT "That item is not in this room."
+        ENDIF
+    ELSE
+        OUTPUT "There is no item to collect here."
+    ENDIF
 
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+    # TODO 6: Show how the process returns to or continues the larger gameplay loop.
+    # After handling the get‑item command, return to the main game loop for movement or other actions.
+    RETURN TO main gameplay loop
 
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+END get_item
+    
 
 END get_item
 
