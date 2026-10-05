@@ -8,6 +8,7 @@
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
 
+
 # TODO 1: Identify the information the movement process needs.
 # The program must know the player's current room and the available directions.
 SET current_room TO player's starting room
@@ -20,27 +21,27 @@ CONVERT player_direction TO lowercase
 
 # TODO 3: Validate whether the requested movement is possible from the current room.
 IF player_direction IS IN valid_directions THEN
-IF current_room HAS a connected room IN player_direction THEN
-# TODO 4: Describe what happens when the movement command is valid.
-SET current_room TO connected room IN player_direction
-OUTPUT "You move " + player_direction + " and enter the " + current_room + "."
+    IF current_room HAS a connected room IN player_direction THEN
+        # TODO 4: Describe what happens when the movement command is valid.
+        SET current_room TO connected room IN player_direction
+        OUTPUT "You move " + player_direction + " and enter the " + current_room + "."
+    ELSE
+        # TODO 5: Describe what happens when the movement command is invalid.
+        OUTPUT "You cannot go that way."
+    ENDIF
 ELSE
-# TODO 5: Describe what happens when the movement command is invalid.
-OUTPUT "You cannot go that way."
-ENDIF
-ELSE
-OUTPUT "Invalid direction. Please enter north, south, east, or west."
+    OUTPUT "Invalid direction. Please enter north, south, east, or west."
 ENDIF
 
 # TODO 6: Show how movement fits into repeated gameplay.
 # The game continues accepting movement commands until a required ending occurs.
 WHILE game_is_active
-REPEAT movement process
-IF player HAS collected all items THEN
-OUTPUT "You have all items! Proceed to the Containment Unit to win."
-SET game_is_active TO FALSE
-ELSE IF player ENTERS villain_room THEN
-OUTPUT "Specimen X attacks! Game over."
-SET game_is_active TO FALSE
-ENDIF
+    REPEAT movement process
+    IF player HAS collected all items THEN
+        OUTPUT "You have all items! Proceed to the Containment Unit to win."
+        SET game_is_active TO FALSE
+    ELSE IF player ENTERS villain_room THEN
+        OUTPUT "Specimen X attacks! Game over."
+        SET game_is_active TO FALSE
+    ENDIF
 ENDWHILE
