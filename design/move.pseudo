@@ -7,19 +7,40 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
+
 # TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+# The program must know the player's current room and the available directions.
+SET current_room TO player's starting room
+SET valid_directions TO ["north", "south", "east", "west"]
 
 # TODO 2: Prompt for and receive the player's movement command.
+OUTPUT "Enter a direction to move (north, south, east, or west):"
+INPUT player_direction
+CONVERT player_direction TO lowercase
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
-
+# TODO 3: Validate whether the requested movement is possible from the current room.
+IF player_direction IS IN valid_directions THEN
+IF current_room HAS a connected room IN player_direction THEN
 # TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
-
+SET current_room TO connected room IN player_direction
+OUTPUT "You move " + player_direction + " and enter the " + current_room + "."
+ELSE
 # TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+OUTPUT "You cannot go that way."
+ENDIF
+ELSE
+OUTPUT "Invalid direction. Please enter north, south, east, or west."
+ENDIF
 
 # TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+# The game continues accepting movement commands until a required ending occurs.
+WHILE game_is_active
+REPEAT movement process
+IF player HAS collected all items THEN
+OUTPUT "You have all items! Proceed to the Containment Unit to win."
+SET game_is_active TO FALSE
+ELSE IF player ENTERS villain_room THEN
+OUTPUT "Specimen X attacks! Game over."
+SET game_is_active TO FALSE
+ENDIF
+ENDWHILE
