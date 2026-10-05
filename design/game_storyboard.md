@@ -7,25 +7,26 @@
 
 **Theme:**
 
-TODO: Name and briefly describe your game's theme.
+The name of my game will be Containment Protocol. The theme is science related and involves a researcher, a lab, a dangerous experimental creature, and science/lab related items.
+
 
 **Storyline:**
 
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
 
+The name of my game will be Containment Protocol. The game takes place inside a high security underground science lab where a containment breach has occurred. A dangerous creature has escaped from its holding chamber, triggering a facility-wide lockdown. The player is a junior researcher who must navigate through different lab rooms to collect essential emergency equipment needed to activate the lab's shutdown protocol. If the player encounters the escaped experimental creature before gathering all required items, they are overpowerd and lose the game. If the player collects all of the items first, they can safely reach the containment chamber and neutralize the threat.
 ## Rooms
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
+Entrance Hall (Start Room) (No item)
+Research Lab A
+Research Lab B
+Chemical storage
+Biohazard Chamber
+Robotics Workshop
+Server Room
+Observation deck
+containment Unit (Villain Room) (No Item)
 
 Add more rooms if your design needs them.
 
@@ -34,19 +35,20 @@ Add more rooms if your design needs them.
 With the minimum eight-room design, Project One requires at least six items.
 Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+Keycard
+Hazmat Suit
+Antidote Vial
+Toolkit
+Power Cell
+Emergency Override Chip
+Security Tablet
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
+The villain is Specimen X, a genetically engineered hybrid organism created for advanced biological research. After the containment breach, Specimen X roams the lab unpredictably and the player must avoid its chamber until all items are collected.
 
 ## Storyboard and Map Check
 
